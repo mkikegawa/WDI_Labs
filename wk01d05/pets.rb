@@ -1,17 +1,17 @@
 class Pet
 # this block is replaced with attr_accessor
-	# attr_reader :name, :age
-	# attr_writer :age
+  # attr_reader :name, :age
+  # attr_writer :age
 # this block is replaced with attr_accessor	
-	attr_reader :name
-	attr_accessor :age
+  attr_reader :name
+  attr_accessor :age
 
 
-	def initialize(name, type, age)
-		@name = name
-		@type = type
-		@age  = age
-	end
+  def initialize(name, type, age)
+    @name = name
+    @type = type
+    @age  = age
+  end
 
 # this block is replaced with attr_accessor
 ## this block is replaced with attr_writer
@@ -31,13 +31,13 @@ class Pet
 ## this block is replaced with attr_reader 
 # this block is replaced with attr_accessor
 
-	def inc_age 
-		@age += 1
-	end 
+  def inc_age 
+    @age += 1
+  end 
 
-	def to_s
-		"#{@name} is a #{@age} year old #{@type}"
-	end
+  def to_s
+    "#{@name} is a #{@age} year old #{@type}"
+  end
 end
 
 miko = Pet.new("Miko", "Dog", 2)
