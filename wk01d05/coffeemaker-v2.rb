@@ -6,12 +6,13 @@ class Cartridge
     { name: "Iced Coffee",   time_brew_in_sec: 20, water_required: 70 }
   ]
 
-  attr_reader :name, :time_brew_in_sec, :water_required
+  attr_reader :name, :time_brew_in_sec, :water_required, :cartridge_empty
   def initialize(selected = "Regular Grind")
     @selected         = selected
     @name             = nil
     @time_brew_in_sec = nil
     @water_required   = nil
+    @cartridge_empty  = true
   end
 
   def grind_coffee
@@ -23,7 +24,7 @@ class Cartridge
   end
 
   def cartridge_fail
-    @name = "Coffee Type Not Available"  
+    @name = "#{@selected} Not Available"  
     self
   end
 
@@ -33,11 +34,17 @@ class Cartridge
     self
   end
 
+  def cartridge_empty?
+    @cartridge_empty
+  end
+
+
   def fill_cartridge
     coffee            = grind_coffee
     @name             = coffee[:name]
     @time_brew_in_sec = coffee[:time_brew_in_sec]
     @water_required   = coffee[:water_required]
+    @cartridge_empty  = false
   end
 
   def self.brew
@@ -64,7 +71,12 @@ cart3.name
 cart3.time_brew_in_sec
 cart3.water_required
 cart3.cartridge_empty?
-
+cart4 = Cartridge.new("cappuccino")
+cart4.make_cartridge
+cart4.name
+cart4.time_brew_in_sec
+cart4.water_required
+cart4.cartridge_empty?
 
 ### irb command line copy from list
 ### regular = Cartridge.new
