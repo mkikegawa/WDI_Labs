@@ -1,10 +1,10 @@
 class Pet
 # this block is replaced with attr_accessor
 	# attr_reader :name, :age
- #  attr_writer :age
+	# attr_writer :age
 # this block is replaced with attr_accessor	
 	attr_reader :name
-  attr_accessor :age
+ 	attr_accessor :age
 
 
 	def initialize(name, type, age)
