@@ -29,7 +29,7 @@ class CoffeeMaker
   end
 
   def water_amount_validate(amount)
-    return 100 - @water_level if amount.downcase == "fill"
+    return 100 - @water_level if amount == "fill" || amount == "Fill" || amount == "FILL"
     return 0 if amount < 0
     amount
   end
