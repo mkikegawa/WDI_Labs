@@ -44,8 +44,8 @@ class VendingMachine
   end
 
   def purchase_messages
-    return ["Please enter #{@price - @amount_deposited}"] if insufficient_deposited?
-    return ["Sold Out", @amount_deposited]                if sold_out?
+    return ["Please enter #{@price - @amount_deposited} cents."] if insufficient_deposited?
+    return ["Sold Out", @amount_deposited]                       if sold_out?
     return complete_sale
   end
 
