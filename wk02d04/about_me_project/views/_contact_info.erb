@@ -1,0 +1,13 @@
+<div>
+  <ul class="addy">
+      <li><%= @person.address %></li>
+      <li><%= @person.state %></li>
+      <li><%= @person.zipcode %></li>
+    </ul>
+    <ul class="addy">
+      <li>Cell: <%= @person.phone %></li>
+    </ul>
+    <ul class="addy">
+      <li>Email: <a href="mailto:<%= @person.email %>?Subject=GA%20Admission%20Website"><%= @person.email %></a></li>
+    <ul>
+</div>
